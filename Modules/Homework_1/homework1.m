@@ -19,7 +19,6 @@ disp("standard_dev");
 standard_dev = std(data,1)
 
 histogram(data, sqrt(length(data)));
-%% Question 2
 
 %Negatively Skewed
 %Used typical bin number sqrt(N) where N is population size
@@ -27,11 +26,13 @@ histogram(data, sqrt(length(data)));
 %Lower Fourth: 72
 %Fourth Spread = 91 - 72 = 19
 %Outliers: 37 and 42
-% %Question 3
-% boxplot(data);
+
+boxplot(data);
 % %What are the upper and lower fourths
 % 
 % 
+
+
 % %Problem 2
 funda = [6.8;6.6;8.3;7.2;5.8;6.7;8.8;4.5;7.8;11.4];
 fundb = [5.7;5.9;7.4;8.5;6.2;6.8;12.4;5.1;4.2;10.3];
@@ -54,7 +55,8 @@ boxplot([funda, fundb], 'Labels',{'Fund A', 'Fund B'});
 % %predictable returns. 
 
 
-%% Problem Three
+
+%% Problem 3
 chips = [3.86 3.66 4.00 4.96 3.61 4.94 4.37 5.24 3.45 3.92 ... 
     3.46 4.18 3.54 3.40 3.47 4.71 4.03 4.24 3.88 4.22];
 disp("Mean");

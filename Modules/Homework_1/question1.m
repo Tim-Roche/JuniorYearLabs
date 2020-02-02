@@ -15,3 +15,5 @@ disp("standard_dev");
 standard_dev = std(data,1)
 
 histogram(data, sqrt(length(data)));
+
+boxplot(data);
