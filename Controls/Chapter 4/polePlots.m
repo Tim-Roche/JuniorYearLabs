@@ -2,8 +2,8 @@ clear all;
 close all;
 
 % Insert your code here
-a_vect = [4 8 2];
-b_vect = [25 37 22];
+a_vect = [4 8 2 4 4 8 32];
+b_vect = [25 37 22 88 340 100 1600];
 
 s = tf("s");
 
