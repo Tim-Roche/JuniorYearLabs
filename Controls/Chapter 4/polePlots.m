@@ -34,5 +34,6 @@ for n=1:length(a_vect)
     figure(figCount);
     G= tf([b], [1 a b]);
     pzplot(G);
+    title("Poles of: a = " + a + ", b = "+b); 
     figCount = figCount + 1;
 end 
