@@ -11,8 +11,8 @@ disp("Expected: " + expected);
 
 %What is the variance of this expectation 
 variance = 0;
-for i=length(probs)
-    variance = variance + probs(i)*(index(i) - expected)^2;
+for i=1:length(probs)
+     variance = variance + probs(i)*(index(i) - expected)^2;
 end
 disp("Variance: "+variance);
 

@@ -1,4 +1,4 @@
-format long
+format long g
 
 participants = 8000;
 prop_reduce = 0.65;
@@ -6,10 +6,7 @@ exactPart = 5250;
 Y = binopdf(exactPart ,participants, prop_reduce);
 disp("P(5250 success)= "+Y*100);
 
-totalY = 0;
-for i=exactPart:participants
-    totalY = totalY + binopdf(i ,participants, prop_reduce);
-end
+totalY = binocdf(5250, participants, prop_reduce);
 disp(">=5250 experiencing migrains: " + totalY*100);
 
 %What is the expected number of participants who will experience a
