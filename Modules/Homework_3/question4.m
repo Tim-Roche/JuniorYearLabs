@@ -6,7 +6,7 @@ exactPart = 5250;
 Y = binopdf(exactPart ,participants, prop_reduce);
 disp("P(5250 success)= "+Y*100);
 
-totalY = binocdf(5250, participants, prop_reduce);
+totalY = 1 - binocdf(5250, participants, prop_reduce);
 disp(">=5250 experiencing migrains: " + totalY*100);
 
 %What is the expected number of participants who will experience a
@@ -25,12 +25,6 @@ disp("Variance: " + biVar);
 %What is the probability that no more than 3000 participants will not
 %experience a reduction in migraines
 %No more than 3000 fail
-start = participants-3000;
-s = 0.0;
-for i=start:participants
-    s=s+binopdf(i,participants, prop_reduce);
-end
-disp("Succeded: "+s);
-
-time = 1:participants;
-plot(time, binopdf(time,participants, prop_reduce));
+start = 5001;
+pLess3000 =1 - binocdf(start,participants,prop_reduce)
+disp("Succeded: "+pLess3000);
