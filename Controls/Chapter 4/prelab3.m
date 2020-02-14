@@ -1,14 +1,15 @@
+clc;
 syms s;
 
 a = 3;
 b_vect = [3.01, 3.1, 3.3, 3.5, 4.0];
-b = b_vect(4);
+b = b_vect(1);
 G = ( (25*b/a)*(s+1) ) / ( (s+b)*(s^2 + 4*s + 25) );
 
 corePole = -2;
 
 g = ilaplace(G)
-cs = coeffs(g)
+cs = double(coeffs(g))
 
 format long
 extraPoleC = double(cs(3));
