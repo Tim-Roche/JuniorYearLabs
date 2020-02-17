@@ -3,10 +3,11 @@ p = 1/30;
 r = 3;
 
 %Question 1
-[M,V] = nbinstat(r,p);
+M = r/p;
 disp("Expected: "+M);
+
 %Question 2
-unwanted = M - 3;
+unwanted = ((r)*(1-p))/p
 
 %Question 3
 output = binopdf(r, 10, p);

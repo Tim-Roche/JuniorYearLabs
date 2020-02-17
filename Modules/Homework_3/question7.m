@@ -6,8 +6,8 @@ prob37 = poisspdf(weWant, movieBuckets);
 disp("Prob37: "+prob37);
 
 %Question 2
-over25 = 1 - poisscdf(25,movieBuckets);
-disp("Over25: "+over25);
+overOrEqual25 = 1 - poisscdf(24,movieBuckets);
+disp("OverOrEqual25: "+overOrEqual25);
 
 %Question 3
 [m,v] = poisstat(movieBuckets);
