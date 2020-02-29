@@ -22,7 +22,8 @@ errorMin = abs(V_min - V_cor)/V_cor*100
 avg = (errorMax + errorMin)/2;
 
 % _________________
-percent = -0.05:0.0001:0.05;
+inc = 0.0001;
+percent = -0.05:inc:0.05;
 deltaR2 = percent*R_2;
 V_mod_R2 = zeros(1, length(deltaR2));
 for i=1:length(deltaR2)    
@@ -32,7 +33,7 @@ V_out = V_in*R_2/(R_1 + R_2);
 
 figure(1);
 change = V_mod_R2-V_out;
-rate = change(4) - change(3)
+rate = (change(4) - change(3))/inc
 disp("Sensitivity of R2: "+rate);
 plot(percent,change);
 title("Sensistivity of R2");
@@ -51,6 +52,7 @@ V_out = V_in*R_2/(R_1 + R_2);
 
 figure(2);
 change = V_mod_Vin-V_out;
+rate = (change(4) - change(3))/inc
 plot(percent,change);
 title("Sensistivity of R1");
 xlabel("Percent from R_1");
@@ -68,6 +70,7 @@ V_out = V_in*R_2/(R_1 + R_2);
 
 figure(1);
 change = V_mod_R2-V_out;
+rate = (change(4) - change(3))/inc
 plot(percent,change);
 title("Sensistivity of R2");
 xlabel("Percent from R_2");
