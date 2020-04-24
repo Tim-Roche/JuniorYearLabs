@@ -1,12 +1,24 @@
-zeros = [];
-poles = [-2 -4 -6];
+sys = tf([1 1.5], [1 10.5 5 0])
+rlocus(sys);
+sgrid;
+zeros = [-1.5];
+poles = [0 -0.5 -10];
+R = 3.431;
+theta = 53.772;
+disp("Sigma: ");
 findSigma(zeros, poles)
+disp("Theta: ");
 findThetas(zeros,poles)
+disp("Breaks: ");
 findBreaks(zeros,poles)
-[ang rcord] = returnAngleFromR(3.431, 53.772, zeros, poles)
+[ang rcord] = returnAngleFromR(R, theta, zeros, poles)
+
+% s = tf("s");
+% t = (s+4)/((s)*(s+2)*(s+6));
+% rlocus(t);
 
 function sigma = findSigma(zeros, poles)
-    sigma = (sum(poles) - sum(zeros))/(length(zeros) + length(poles));
+    sigma = (sum(poles) - sum(zeros))/(length(poles) - length(zeros));
 end
 
 function angles = findThetas(zeros, poles)
