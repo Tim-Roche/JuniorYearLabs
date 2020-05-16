@@ -44,12 +44,12 @@ rlocus(G)
 %% PID Tuner
 close all; 
 
-Kp = 0.020;
-Ki = 0;
-Kd = 0.10;
+Kp = 0.00783479924407458;
+Ki = 7.56720005725385;
+Kd = 6.5162198677668e-07;
 
 C = pid(Kp, Ki, Kd);
 T = feedback(C*G, H);
 step(T);
 stepinfo(T)
-%rlocus(G)
+rlocus(G)
